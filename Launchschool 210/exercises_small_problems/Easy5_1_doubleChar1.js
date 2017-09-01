@@ -29,7 +29,7 @@ function repeater2(string) {
 // =====================third solution ======================
 
 function repeater3(string) {
-  
+  return string.replace(/./g, "$&$&");
 }
 
 
