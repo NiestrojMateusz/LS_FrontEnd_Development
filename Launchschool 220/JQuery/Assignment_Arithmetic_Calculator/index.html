@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>jQuery Selectors</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        function compute(firstNum, secondNum,operator) {
+          switch (operator) {
+            case "add":
+              return firstNum + secondNum;
+              break;
+            case "subtract":
+              return firstNum - secondNum;
+              break;
+            case "multiply":
+              return firstNum * secondNum;
+              break;
+            case "divide":
+              return firstNum / secondNum;
+              break;
+            default:
+              break;
+          }
+        }
+
+        document.getElementById('form').onsubmit = function(e) {
+          e.preventDefault();
+          var firstNum = Number(document.querySelectorAll('input[type=number]')[0].value);
+          var secondNum = Number(document.querySelectorAll('input[type=number]')[1].value);
+          var operator = document.getElementById('operator').value;
+          var result = compute(firstNum, secondNum, operator);
+          document.getElementById('result').innerHTML = result;
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <main>
+      <form id="form" action="" method="get">
+        <fieldset>
+          <h1 id="result">Here will be a result</h1>
+          <input type="number" value="0" >
+          <select name="operator" id="operator">
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+          </select>
+          <input type="number" value="0">
+          <input type="submit" value="=">
+        </fieldset>
+      </form>
+    </main>
+  </body>
+</html>

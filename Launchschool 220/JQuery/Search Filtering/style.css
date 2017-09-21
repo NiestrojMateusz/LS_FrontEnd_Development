@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #efe096;
+  font: normal 13px Helvetica, Arial, sans-serif;
+}
+
+#page {
+  background-color: #fff;
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+main {
+  order: 2;
+  width: 80%;
+  padding: 0 0 0 52px;
+}
+
+main ul {
+  list-style: none;
+  padding: 0 20px 20px 0;
+}
+
+main li {
+  padding: 15px 20px;
+}
+
+main li:hover {
+  background: #99f099;
+}
+
+aside {
+  order: 1;
+  padding: 50px 20px 0 20px;
+}
+
+aside ul {
+  list-style: none;
+  padding: 0 20px 0 20px;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
