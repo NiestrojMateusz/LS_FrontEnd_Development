@@ -51,20 +51,77 @@ $(function(){
     "category": "Xbox One"
     }
     ];
-  var $items = $("main li"),
-      $categories = $(":checkbox");
 
-  $categories.on('change', function(e) {
-    var $checkbox = $(this),
-        checked = $checkbox.is(":checked"),
-        category = $checkbox.val(),
-        category_items;
-    category_items = catalog.filter(function(item) {
-      return item.category === category;
+    var $items = $("main li"),
+    $categories = $(":checkbox");
+
+    function findItem(idx) {
+      return $items.filter("[data-id=" + idx + "]");
+    }
+
+    function toggleCategories() {
+      $categories.each(function(i) {
+        var $e = $categories.eq(i),
+            checked = $e.is(":checked"),
+            category = $e.val();
+
+        catalog.filter(function(item) {
+          return item.category === category;
+        }).forEach(function(item) {
+          findItem(item.id).toggle(checked);
+        });
+      });
+    }
+
+    $("#search").on("submit", function(e) {
+      e.preventDefault();
+
+      var term = $(e.target).find("[type=search]").val().toLowerCase();
+
+      toggleCategories();
+      catalog.forEach(function(item) {
+        if (item.title.toLowerCase().indexOf(term) === -1) {
+          findItem(item.id).hide();
+        }
+      });
     });
 
-    category_items.forEach(function(item) {
-      $items.filter("[data-id=" + item.id + "]").toggle(checked);
+    $("aside :checkbox").on("change", function() {
+      $("#search").submit();
     });
- });
+  // var $items = $("main li"),
+  //     $categories = $(":checkbox");
+
+  // $categories.on('change', function(e) {
+  //   var $checkbox = $(this),
+  //       checked = $checkbox.is(":checked"),
+  //       category = $checkbox.val(),
+  //       category_items;
+  //   category_items = catalog.filter(function(item) {
+  //     return item.category === category;
+  //   });
+
+  //   category_items.forEach(function(item) {
+  //     $items.filter("[data-id=" + item.id + "]").toggle(checked);
+  //   });
+  // });
+
+  // $("#search").on('submit', function(e) {
+  //   e.preventDefault();
+
+
+  //   var $checkbox = $(this),
+  //       checked = $checkbox.is(":checked"),
+  //       category = $checkbox.val(),
+  //       category_items;
+  //       search = $("input[type=search]").val().toLowerCase();
+
+  //   category_items = catalog.filter(function(item) {
+  //     return !item.title.toLowerCase().includes(search);
+  //   });
+
+  //   category_items.forEach(function(item) {
+  //     $items.filter("[data-id=" + item.id + "]").hide();
+  //   });
+  // });
 });

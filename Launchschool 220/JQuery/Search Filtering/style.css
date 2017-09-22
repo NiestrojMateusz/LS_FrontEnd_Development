@@ -12,8 +12,35 @@ body {
   margin: 0 auto;
   display: flex;
   flex-direction: row;
+  flex-flow: row wrap;
 }
 
+#search {
+  flex: 1 100%;
+  padding: 20px;
+}
+
+#search input[type=search] {
+  width: 80%;
+  height: 40px;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  border: 1px solid #cccccc;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+  padding: 0;
+}
+
+#search input[type=submit] {
+  width: 20%;
+  height: 40px;
+  font: normal 16px Helvetica, Arial, sans-serif;
+  vertical-align: top;
+  border: 1px solid #cccccc;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  background: linear-gradient(to bottom, #f0f0f0 0%, #d5d5d5 100%);
+  padding: 0;
+}
 main {
   order: 2;
   width: 80%;
