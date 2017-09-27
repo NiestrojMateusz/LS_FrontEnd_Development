@@ -6,9 +6,17 @@ $(function() {
     tags: ["first tag", "second tag", "third tag"]
   };
 
+  var posts = [{
+    title: 'voluptate velit',
+    published: 'April 2, 2015',
+    body: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
+  }];
+
+  posts.push(post);
+
   post.body = '<p>' + post.body + '</p>';
-  var postTemplate = Handlebars.compile($('#post').html());
+  var postTemplate = Handlebars.compile($('#posts').html());
   var tagTemplate = Handlebars.registerPartial('tag', $('#tag').html());
 
-  $("body").append(postTemplate(post));
+  $("body").append(postTemplate({ posts: posts }));
 });
