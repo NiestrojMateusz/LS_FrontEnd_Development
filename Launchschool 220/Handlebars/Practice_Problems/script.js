@@ -8,6 +8,7 @@ $(function() {
 
   post.body = '<p>' + post.body + '</p>';
   var postTemplate = Handlebars.compile($('#post').html());
+  var tagTemplate = Handlebars.registerPartial('tag', $('#tag').html());
 
   $("body").append(postTemplate(post));
 });
