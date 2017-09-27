@@ -15,6 +15,11 @@
       <h1>{{title}}</h1>
       <p><time>Posted on {{published}}</time></p>
       {{{body}}}
+      <p>Tags:
+      {{#each tags}}
+        {{this}},
+      {{/each}}
+      </p>
     </article>
   </script>
 </body>
