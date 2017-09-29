@@ -43,6 +43,7 @@ $(function(){
       this.renderPhotoContent($next.attr("data-id"));
     },
     renderPhotoContent: function(idx) {
+      $("[name=photo_id]").val(idx);
       renderPhotoInformation(+idx);
       getCommentsFor(+idx);
     },
@@ -63,6 +64,40 @@ $(function(){
       slideshow.init();
       getCommentsFor(photos[0].id);
     }
+  });
+
+  $("section > header").on("click", ".actions a", function(e){
+    e.preventDefault();
+    $e = $(this);
+
+    $.ajax({
+      url: $e.attr("href"),
+      type: "post",
+      data: "photo_id=" + $e.attr("data-id"),
+      success: (json) => {
+        $e.text(function(i, txt){
+          return txt.replace(/\d+/, json.total);
+        });
+      }
+    });
+  });
+
+  $( "form" ).on( "submit", function( e ) {
+    e.preventDefault();
+    $e = $(this);
+
+    var data = ($e.serialize()),
+        url = $e.attr("action");
+        type = $e.attr("method");
+    $.ajax({
+      url: url,
+      type: type,
+      data: data,
+      success: (json) => {
+        $("#comments ul").append(templates.comment(json));
+        $e.get(0).reset();
+      }
+    });
   });
 
   function renderPhoto() {
@@ -91,11 +126,6 @@ $(function(){
     $("#comments ul").html(templates.comments({comments: comment}));
   }
 
-
-  $("#slideshow ul").on("click", "a", (e) => {
-    e.preventDefault();
-
-  });
 
 });
 
