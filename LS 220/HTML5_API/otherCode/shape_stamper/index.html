@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shape Stamper</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="stamper.js"></script>
+  <style>
+    #shape-buttons, #action-buttons {
+      display: inline;
+      padding: 0 20px 0 0;
+    }
+
+    #size-select {
+      position: relative;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="800" height="600"></canvas>
+  <form action="/" method="get">
+    <fieldset>
+      <div id="shape-buttons">
+        <button id="circle">Circle</button>
+        <button id="square">Square</button>
+        <button id="triangle">Triangle</button>
+      </div>
+      <div id="action-buttons">
+        <button id="clear">Clear Canvas</button>
+        <button id="undo">Undo</button>
+      </div>
+      <label for="color-input">Color: <input type="text" name="color" id="color-input"></label>
+    </fieldset>
+  </form>
+  <div id="size-select-div"></div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+body {
+  background: black;
+  font: normal 30px Arial, Helvetica, sans-serif;
+  color: white;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+main {
+  display: block;
+  width: 1100px;
+  margin: 0 auto;
+  padding: 200px 0 0 0;
+}
+
+#message {
+  font-size: 30px;
+  text-align: center;
+  display: none;
+}
+
+
+#gallows {
+  float: left;
+}
+
+#gallows img {
+  min-height: 280px
+}
+
+#board {
+  float: left;
+  padding: 50px;
+  /* text-align: center; */
+}
+
+#board h2 {
+  font-size: 24px;
+  display: inline-block;
+  padding: 0 20px 0 0;
+}
+
+#spaces {
+  margin: 0 0 30px 0 ;
+}
+
+span {
+  padding: 0 15px 0 0;
+}
+
+#guesses {
+  font-size: 24px;
+}
+.newGame {
+  text-align: center;
+  display: none;
+  width: 100%;
+  padding: 10px;
+  transition: all .2s ease-in-out;
+}
+
+a {
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  border: 2px solid white;
+  padding: 10px;
+  width: 100px;
+
+}
+
+.newGame:hover {
+  transform: scale(1.1, 1.1);
+}
