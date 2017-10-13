@@ -184,3 +184,14 @@
   window._ = _;
 })();
 
+function p() {
+  console.log.apply(console, arguments);
+}
+
+function q() {
+  console.dir.apply(console, arguments);
+}
+
+function r() {
+  console.table.apply(console, arguments);
+}
