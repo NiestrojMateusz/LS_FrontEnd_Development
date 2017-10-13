@@ -1,0 +1,65 @@
+@import url("reset.css");
+
+* { box-sizing: border-box; }
+body { font: normal 16px Helvetica, Arial, sans-serif; }
+a { text-decoration: none; }
+
+header {
+  padding: 30px 15px;
+  font-size: 20px;
+  background-color: #6f5499;
+  background-image: linear-gradient(to bottom,#563d7c 0,#6f5499 100%);
+  color:#cdbfe3;
+  text-align: center;
+}
+
+header h1  {
+  color: white;
+  font-size: 36px;
+  margin: 0 0 10px 0;
+}
+header p {
+  margin: 0 0 0 0;
+}
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
+  border-radius: 5px;
+}
+.menu {
+  display: flex;
+  padding: 16px;
+  justify-content: space-between;
+}
+
+#add-contact {
+  margin: 0 0 0 215px;
+}
+.search-row {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 100px 0 0;
+}
+
+#search {
+  margin: 0 15px 0 0;
+  border-radius: 5px;
+  border: 1px solid #e3e3e3;
+  padding: 0 0 0 5px;
+  height: 34px;
+  font-size: 17px;
+  align-self: center;
+}
+
+button {
+  padding: 10px 16px;
+  font-size: 18px;
+  color: #563d7c;
+  background-color: transparent;
+  border: 1px solid #563d7c;
+  border-radius: 5px;
+  line-height: 1.33
+}
+
