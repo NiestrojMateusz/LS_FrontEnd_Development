@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="stylesheets/reset.css">
+  <!-- <link rel="stylesheet" href="stylesheets/reset.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
@@ -23,7 +24,28 @@
         <button type="reset">Reset</button>
       </div>
     </section>
+
   </main>
+<script id="contacts-template" type="text/x-handlebars-template">
+  <section id="contacts">
+    {{>contact-template}}
+  </section>
+</script>
+<script id="contact-template" type="text/x-handlebars-template">
+{{#each contacts}}
+  <div class="contact">
+    <div class="contact-details">
+      <h3 class="contact-name">{{name}}</h3>
+      <p><strong>Phone Number:</strong></p>
+      <p>{{number}}</p>
+      <p><strong>Email:</strong></p>
+      <p>{email}</p>
+      <button class="edit-contact"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</button>
+      <button class="delete-contact"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
+    </div>
+  </div>
+ {{/each}}
+</script>
 <script src="scripts/app.js"></script>
 </body>
 </html>
