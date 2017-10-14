@@ -1,0 +1,5 @@
+function App()  {
+  init: function() {
+
+  }
+}
