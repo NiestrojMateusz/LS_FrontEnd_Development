@@ -18,10 +18,16 @@
   </header>
   <main class="container">
     <section class="menu">
-      <button id="add-contact">Add Contact</button>
+      <button class="add-contact">Add Contact</button>
       <div class="search-row" action="get">
         <input type="search" name="search" id="search" placeholder="Search">
         <button type="reset">Reset</button>
+      </div>
+    </section>
+    <section id="contacts">
+      <div id="empty-contacts">
+        <h1>There is no contacts.</h1>
+        <button class="add-contact">Add Contact</button>
       </div>
     </section>
     <section id="contact-form">
@@ -47,20 +53,11 @@
           <button class="cancel">Cancel</button>
         </fieldset>
       </form>
-    </section>
-    <section id="empty-contacts">
-      <h1>There is no contacts.</h1>
-      <button class="add-contact">Add Contact</button>
-    </section>
-    <footer>
-      <p>Developed by <a href=https://github.com/NiestrojMateusz>Mateusz Niestrój</a></p>
-    </footer>
+      </section>
   </main>
-<script id="contacts-template" type="text/x-handlebars-template">
-  <section id="contacts">
-    {{>contact-template}}
-  </section>
-</script>
+  <footer>
+      <p>Developed by <a href="https://github.com/NiestrojMateusz">Mateusz Niestrój</a></p>
+    </footer>
 <script id="contact-template" type="text/x-handlebars-template">
 {{#each contacts}}
   <div class="contact">
@@ -69,12 +66,12 @@
       <p><strong>Phone Number:</strong></p>
       <p>{{number}}</p>
       <p><strong>Email:</strong></p>
-      <p>{email}</p>
+      <p>{{email}}</p>
       <button class="edit-contact"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</button>
       <button class="delete-contact"><i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
     </div>
   </div>
- {{/each}}
+{{/each}}
 </script>
 <script src="scripts/app.js"></script>
 </body>
