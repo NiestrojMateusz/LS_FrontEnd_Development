@@ -49,7 +49,12 @@
             <input type="tel" name="phoneNumber">
           </div>
 
-          <button class="edit-contact">Submit</button>
+          <div class="input-group">
+            <label><strong>Tags:</strong></label>
+            <input type="text" name="tags">
+          </div>
+
+          <button class="submit-contact">Submit</button>
           <button class="cancel">Cancel</button>
         </fieldset>
       </form>
@@ -60,7 +65,7 @@
     </footer>
 <script id="contact-template" type="text/x-handlebars-template">
 {{#each contacts}}
-  <div class="contact">
+  <div class="contact" data-id="{{index}}">
     <div class="contact-details">
       <h3 class="contact-name">{{name}}</h3>
       <p><strong>Phone Number:</strong></p>
